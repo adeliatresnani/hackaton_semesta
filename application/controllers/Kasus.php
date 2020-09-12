@@ -19,7 +19,6 @@ class Kasus extends CI_Controller{
         $this->m_kasus->input_data($data, 'kasus');
         
         redirect('dashboard/index','refresh');
-    }
-}
+}}
 
 ?>

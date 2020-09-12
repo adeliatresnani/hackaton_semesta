@@ -10,66 +10,79 @@
 
     <title>SIGAP COVID-19</title>
   </head>
-  <body>
+  <body style="background-color: #242421">
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #242421" fixed-top>
   <div class="container">
   <a class="navbar-brand" href="#">SIGAP COVID-19</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Beranda <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="<?=base_url()?>index.php/Dashboard">Beranda <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?=base_url()?>index.php/Info">Informasi</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">FAQ</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Informasi</a>
       </li>
     </ul>
   </div>
   </div>
 </nav>
 
-<div class="jumbotron jumbotron-fluid" style="background-color: #242421; color: white; height: 300px;">
+<div class="jumbotron jumbotron-fluid" style="background-image: url('https://cdn0-production-images-kly.akamaized.net/7G1tzQFIcfHcu116LoZLWiYk4XA=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3043897/original/045004600_1581050149-Coronavirus.jpg'); color: white; height: 300px;">
   <div class="container">
-    <h1 class="display-4" style="">Kawal informasi seputar COVID-19 <br> secara tepat dan akurat</h1>
+    <h1 class="display-4" style="text-shadow:2px 2px grey; font-weight: bold;">Kawal informasi seputar COVID-19 <br> secara tepat dan akurat</h1>
   </div>
+</div>
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+
+<div class="jumbotron jumbotron-fluid" style="background-color: #242421; color: white; height: 100px;">
+  <div class="container">
+    <h1 class="display-4" >Bacaan Pilihan</h1>
+    </div>
 </div>
 
 <div class="row" >
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Kumpulan Cerita Penyintas COVID-19</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Yuk! Cek Deteksi Dini Risiko Covid-19 Secara Online</h5>
+        <p class="card-text">Masyarakat dapat memanfaatkan teknologi informasi dan komunikasi telemedik atau telemedicine untuk upaya pencegahan dan penanganan COVID -19 ...</p>
+        <a href="http://indonesiabaik.id/infografis/yuk-cek-deteksi-disini-risiko-covid-19-secara-online" target="_blank" class="btn btn-primary">Detail</a>
       </div>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Benarkah OTG Menular?</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Ada yang Berubah, Ini Gejala COVID-19 Terbaru!</h5>
+        <p class="card-text">Batuk, sesak napas, dan demam merupakan gejala COVID-19 yang paling umum diketahui. Tapi ada tanda ...</p>
+        <a href="https://health.detik.com/berita-detikhealth/d-5075974/ada-yang-berubah-ini-gejala-covid-19-terbaru-yang-perlu-kamu-tahu"  target="_blank" class="btn btn-primary">Detail</a>
       </div>
     </div>
   </div>
 </div>
 <br> <br>
 
-<table class="table table-bordered table-striped display" id="myTab">
+<div class="dropdown-divider"></div>
+<div class="dropdown-divider"></div>
+<br> <br>
+
+<h2 style="color: white; padding:10px;">Data Covid-19 Indonesia berdasarkan Provinsi</h2> <br> <br>
+<table class="table table-bordered table-striped display" id="myTab" style="color: white; border-radius: 30px;">
 		<thead>
 			<tr>
-				<th>FID</th>
-				<th>Provinsi</th>
+				<th>Kode Provinsi</th>
+                <th>Provinsi</th>
                 <th>Kasus Positif</th>
                 <th>Kasus Sembuh</th>
                 <th>Kasus Meninggal</th>
-                <th></th>
+
 			</tr>
 		</thead>
 
@@ -77,7 +90,8 @@
 		<?php 
 		foreach($displayArray as $s){
 			echo "<tr>
-			<td>$s[fid]</td>
+
+            <td>$s[kodeProvi]</td>
 			<td>$s[provinsi]</td>
 			<td>$s[kasusPosi]</td>
             <td>$s[kasusSemb]</td>
@@ -94,11 +108,11 @@
 
     <div class="card text-center">
   <div class="card-header">
-  Laporkan
+  BANTUAN
   </div>
   <div class="card-body">
-    <h5 class="card-title">Ajukan laporan jika Anda melihat dan mengetahui bahwa orang di sekitar Anda berpotensi terpapar Virus COVID-19</h5>
-    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i>Ajukan Laporan</button>
+    <h5 class="card-title">Jangan ragu untuk melapor jika Anda melihat dan mengetahui bahwa orang di sekitar Anda berpotensi terpapar Virus COVID-19!</h5>
+    <button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i>Ajukan Laporan</button>
   </div>
 
 </div>

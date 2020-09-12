@@ -17,7 +17,7 @@ class Dashboard extends CI_Controller{
 		$quantity = 10; // Showing 10 Data per page
 		$start = $this->uri->segment(3);
 		$data['displayArray'] = array_slice($displayArray, $start, $quantity);
-		$config['base_url'] = site_url('news/index');
+		$config['base_url'] = site_url('dashboard/index');
 		$config['total_rows'] = count($displayArray);
 		$config['per_page'] = $quantity;
 		
