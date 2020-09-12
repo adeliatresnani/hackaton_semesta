@@ -1,0 +1,10 @@
+.jumbotron{
+    background-color: #242421;
+    margin-top: -120px;
+}
+
+.jumbotron .display-4 {
+    font-weight: bold;
+    background-color: #242421;
+
+}
